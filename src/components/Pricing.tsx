@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const included = [
-  "Unlimited AI-generated weekend itineraries",
+  "Unlimited custom weekend itineraries",
   "Personalised to your vehicle & camping style",
   "4WD tracks, fishing spots & hiking routes",
   "Packing lists & local insider tips",

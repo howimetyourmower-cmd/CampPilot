@@ -29,7 +29,7 @@ export function Footer() {
         <div className="mt-8 border-t border-white/10 pt-8 text-center text-xs">
           <p>© {year} CampPilot. All rights reserved.</p>
           <p className="mt-2">
-            AI-powered camping, 4WD &amp; fishing adventures for Australia.
+            Personalised camping, 4WD &amp; fishing adventures for Australia.
           </p>
         </div>
       </div>

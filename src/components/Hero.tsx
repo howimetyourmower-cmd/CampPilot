@@ -28,15 +28,15 @@ export function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-20">
         <div className="text-white">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-ember">
-            AI-Powered Trip Planning
+            Tailored for Your Next Adventure
           </p>
           <h1 className="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Plan Your Perfect{" "}
             <span className="text-ember">Adventure</span> in Minutes
           </h1>
           <p className="mt-4 max-w-lg text-lg text-white/85">
-            AI-powered camping, 4WD and fishing itineraries tailored to your
-            style.
+            Tell us how you like to travel and we&apos;ll build your perfect
+            camping, 4WD or fishing adventure.
           </p>
 
           <ul className="mt-8 space-y-3">

@@ -14,9 +14,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "CampPilot | AI-Powered Australian Camping Adventures",
+  title: "CampPilot | Tailored Australian Adventure Planning",
   description:
-    "AI-powered camping, 4WD and fishing itineraries tailored to your style. Plan your perfect weekend adventure in minutes.",
+    "Personalised camping, 4WD and fishing itineraries tailored to your style. Plan your perfect weekend adventure in minutes.",
   keywords: [
     "camping Australia",
     "4WD trips",
