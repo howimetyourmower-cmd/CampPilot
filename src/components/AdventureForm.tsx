@@ -76,8 +76,7 @@ export function AdventureForm() {
       className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
     >
       <h2 className="font-display text-xl font-bold uppercase tracking-tight text-forest sm:text-2xl">
-        Plan Your Adventure{" "}
-        <span className="text-ember">Free</span>
+        Plan Your Adventure
       </h2>
       <p className="mt-2 text-sm text-forest/70">
         Tell us about your trip and we&apos;ll craft a personalised itinerary.

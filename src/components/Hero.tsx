@@ -19,19 +19,22 @@ export function Hero() {
           alt="Campers by a campfire at sunset with a 4WD and rooftop tent"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[62%_58%] sm:object-[58%_56%] lg:object-[60%_58%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-20">
         <div className="text-white">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-ember">
-            TAILORED FOR YOUR NEXT ADVENTURE
+            YOUR PERSONAL CAMPING CO-PILOT
           </p>
           <h1 className="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            PLAN YOUR PERFECT ADVENTURE IN MINUTES
+            <span className="block">PLAN YOUR</span>
+            <span className="block">PERFECT</span>
+            <span className="block text-ember">ADVENTURE</span>
+            <span className="block">IN MINUTES</span>
           </h1>
           <p className="mt-4 max-w-lg text-lg text-white/85">
             Tell us how you like to travel and we&apos;ll build your perfect

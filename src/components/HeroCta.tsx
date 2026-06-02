@@ -14,7 +14,7 @@ export function HeroCta() {
           })
         }
       >
-        Get My First Adventure Free
+        Plan My Adventure
       </Button>
       <p className="mt-2 text-xs text-white/60">No credit card required</p>
     </div>

@@ -45,7 +45,7 @@ export function Header() {
               })
             }
           >
-            Get My First Adventure Free
+            Plan My Adventure
           </Button>
         </div>
 
@@ -83,7 +83,7 @@ export function Header() {
                 });
               }}
             >
-              Get My First Adventure Free
+              Plan My Adventure
             </Button>
           </nav>
         </div>
