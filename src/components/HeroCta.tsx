@@ -14,9 +14,9 @@ export function HeroCta() {
           })
         }
       >
-        Plan My Adventure
+        Get Early Access
       </Button>
-      <p className="mt-2 text-xs text-white/60">No credit card required</p>
+      <p className="mt-2 text-xs text-white/60">Limited beta spots available</p>
     </div>
   );
 }

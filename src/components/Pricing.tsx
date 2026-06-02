@@ -16,10 +16,10 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-forest sm:text-4xl">
-            Simple Pricing
+            Launch Pricing
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-forest/70">
-            One plan. Every adventure. Start with your first itinerary free.
+            Join early access now and lock in our founding member rate.
           </p>
         </div>
 
@@ -53,11 +53,11 @@ export function Pricing() {
 
               <a href="#adventure-form" className="mt-8 block">
                 <Button variant="ember" fullWidth className="!py-4">
-                  Start Free — Then $9/month
+                  Join Early Access — $9/month
                 </Button>
               </a>
               <p className="mt-3 text-center text-xs text-forest/50">
-                First adventure free. No credit card required to start.
+                Billed only when beta access opens for your account.
               </p>
             </div>
           </div>

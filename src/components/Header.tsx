@@ -45,7 +45,7 @@ export function Header() {
               })
             }
           >
-            Plan My Adventure
+            Get Early Access
           </Button>
         </div>
 
@@ -83,7 +83,7 @@ export function Header() {
                 });
               }}
             >
-              Plan My Adventure
+              Get Early Access
             </Button>
           </nav>
         </div>

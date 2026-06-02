@@ -6,21 +6,21 @@ import { Button } from "@/components/ui/Button";
 const steps = [
   {
     number: 1,
-    title: "You Tell Us",
+    title: "Join Early Access",
     description:
-      "Trip type, location, days, travellers, camping style, 4WD needs, fishing interest and budget — we learn what makes your perfect weekend.",
+      "Share your first name, email and state so we can invite you to the CampPilot beta as soon as your region opens.",
   },
   {
     number: 2,
-    title: "We Plan Your Adventure",
+    title: "We Build Your Planner",
     description:
-      "Our itinerary planner finds the best destinations, campsites, tracks and activities — then builds a detailed Fri–Sun adventure tailored to you.",
+      "We are refining personalised camping, 4WD and fishing trip planning for Australian weekend adventurers.",
   },
   {
     number: 3,
-    title: "You Get Inspired",
+    title: "You Get First Access",
     description:
-      "Receive a complete adventure plan with routes, meals, highlights, packing lists and local tips — ready to hit the road.",
+      "Early members receive priority access, launch pricing and real-world itinerary examples as soon as features go live.",
   },
 ];
 
@@ -88,20 +88,20 @@ function SampleCard() {
           </span>
           <span className="text-xs text-forest/50">•</span>
           <span className="text-xs text-forest/60">
-            Your Adventure is Ready
+            Preview Itinerary
           </span>
         </div>
       </div>
 
       <div className="p-5">
         <p className="text-xs font-semibold uppercase tracking-wider text-ember">
-          This Weekend&apos;s Adventure
+          Beta Itinerary Preview
         </p>
         <h3 className="mt-1 font-display text-xl font-bold text-forest">
-          Woods Point, VIC
+          Woods Point, VIC Weekend
         </h3>
         <p className="mt-1 text-xs text-forest/60">
-          3 hrs 20 mins from Melbourne • 2 Nights • Campfire Friendly
+          3 hrs 20 mins from Melbourne • 2 Nights • Riverfront Camping
         </p>
 
         <div className="relative mt-4 aspect-video overflow-hidden rounded-lg">
@@ -118,19 +118,22 @@ function SampleCard() {
           <div>
             <span className="font-bold text-forest">Friday:</span>{" "}
             <span className="text-forest/70">
-              Arrive, set up camp, relax by the fire.
+              Depart after work, set up by the Goulburn River, and enjoy a
+              campfire dinner under the stars.
             </span>
           </div>
           <div>
             <span className="font-bold text-forest">Saturday:</span>{" "}
             <span className="text-forest/70">
-              Scenic drive, lookouts, pub lunch, explore.
+              Morning 4WD track loop to local lookouts, lunch at Woods Point
+              Pub, then an afternoon river fish.
             </span>
           </div>
           <div>
             <span className="font-bold text-forest">Sunday:</span>{" "}
             <span className="text-forest/70">
-              Historic town visit, brunch, home by afternoon.
+              Easy breakfast, short heritage walk, scenic drive home with a
+              final bakery stop in Jamieson.
             </span>
           </div>
         </div>

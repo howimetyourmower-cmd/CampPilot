@@ -25,8 +25,8 @@ const features = [
   },
   {
     icon: Calendar,
-    title: "Instant Itineraries",
-    description: "Full weekend plans generated in minutes.",
+    title: "Early Access Beta",
+    description: "Join first and help shape the personalised itinerary planner.",
   },
   {
     icon: Flame,

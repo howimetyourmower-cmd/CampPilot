@@ -1,25 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import {
-  Calendar,
-  Car,
-  DollarSign,
-  Fish,
-  Mail,
-  MapPin,
-  Tent,
-  User,
-  Users,
-} from "lucide-react";
-import {
-  AU_STATES,
-  BUDGET_OPTIONS,
-  CAMPING_STYLES,
-  DAYS_OPTIONS,
-  TRAVELLERS_OPTIONS,
-  TRIP_TYPES,
-} from "@/lib/constants";
+import { Mail, MapPin, Tent, User } from "lucide-react";
+import { AU_STATES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 interface FormFieldProps {
@@ -47,8 +30,9 @@ export function AdventureForm() {
   const [submitted, setSubmitted] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [state, setState] = useState("");
   const [waitlistSubmissions, setWaitlistSubmissions] = useState<
-    Array<{ firstName: string; email: string; submittedAt: string }>
+    Array<{ firstName: string; email: string; state: string; submittedAt: string }>
   >([]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -56,10 +40,11 @@ export function AdventureForm() {
     const entry = {
       firstName: firstName.trim(),
       email: email.trim(),
+      state: state.trim(),
       submittedAt: new Date().toISOString(),
     };
     setWaitlistSubmissions((prev) => [...prev, entry]);
-    // TODO: Send waitlist submissions to an email/CRM provider (e.g. Resend, Mailchimp, ConvertKit).
+    // TODO: Send waitlist submissions to an email/database provider (e.g. Resend + Supabase).
     setSubmitted(true);
   }
 
@@ -76,7 +61,7 @@ export function AdventureForm() {
           You&apos;re on the list!
         </h3>
         <p className="mt-2 text-sm text-forest/70">
-          You&apos;re on the list. We&apos;ll notify you when CampPilot launches.
+          We&apos;ll send early access details when CampPilot beta launches.
         </p>
       </div>
     );
@@ -89,164 +74,51 @@ export function AdventureForm() {
       className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
     >
       <h2 className="font-display text-xl font-bold uppercase tracking-tight text-forest sm:text-2xl">
-        CampPilot is Coming Soon
+        Get Early Access
       </h2>
       <p className="mt-2 text-sm text-forest/70">
-        Adventure generation is currently in development. Join the waitlist
-        below and we&apos;ll notify you when early access launches.
+        Join the waitlist and be first to try CampPilot when we launch.
       </p>
 
       <div className="mt-6 space-y-4">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="First Name" icon={<User className="h-3.5 w-3.5" />}>
-            <input
-              name="firstName"
-              type="text"
-              autoComplete="given-name"
-              required
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              className={selectClass}
-              placeholder="First name"
-            />
-          </FormField>
-          <FormField
-            label="Email Address"
-            icon={<Mail className="h-3.5 w-3.5" />}
-          >
-            <input
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={selectClass}
-              placeholder="you@example.com"
-            />
-          </FormField>
-        </div>
-
-        <FormField
-          label="Trip type"
-          icon={<Calendar className="h-3.5 w-3.5" />}
-        >
-          <select name="tripType" required className={selectClass} defaultValue="">
-            <option value="" disabled>
-              Select trip type
-            </option>
-            {TRIP_TYPES.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+        <FormField label="First Name" icon={<User className="h-3.5 w-3.5" />}>
+          <input
+            name="firstName"
+            type="text"
+            autoComplete="given-name"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className={selectClass}
+            placeholder="First name"
+          />
         </FormField>
-
-        <FormField
-          label="Location (home base)"
-          icon={<MapPin className="h-3.5 w-3.5" />}
-        >
-          <select name="location" required className={selectClass} defaultValue="">
-            <option value="" disabled>
-              Select state / region
-            </option>
-            {AU_STATES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
+        <FormField label="Email Address" icon={<Mail className="h-3.5 w-3.5" />}>
+          <input
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={selectClass}
+            placeholder="you@example.com"
+          />
         </FormField>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FormField
-            label="Number of days"
-            icon={<Calendar className="h-3.5 w-3.5" />}
+        <FormField label="State" icon={<MapPin className="h-3.5 w-3.5" />}>
+          <select
+            name="state"
+            required
+            className={selectClass}
+            value={state}
+            onChange={(e) => setState(e.target.value)}
           >
-            <select name="days" required className={selectClass} defaultValue="3">
-              {DAYS_OPTIONS.map((d) => (
-                <option key={d} value={d}>
-                  {d} days
-                </option>
-              ))}
-            </select>
-          </FormField>
-
-          <FormField
-            label="Travellers"
-            icon={<Users className="h-3.5 w-3.5" />}
-          >
-            <select name="travellers" required className={selectClass} defaultValue="">
-              <option value="" disabled>
-                Who&apos;s coming?
-              </option>
-              {TRAVELLERS_OPTIONS.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </FormField>
-        </div>
-
-        <FormField
-          label="Camping style"
-          icon={<Tent className="h-3.5 w-3.5" />}
-        >
-          <select name="campingStyle" required className={selectClass} defaultValue="">
             <option value="" disabled>
-              Where do you sleep?
+              Select your state
             </option>
-            {CAMPING_STYLES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-        </FormField>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FormField
-            label="4WD required?"
-            icon={<Car className="h-3.5 w-3.5" />}
-          >
-            <select name="fourWd" required className={selectClass} defaultValue="">
-              <option value="" disabled>
-                Select
-              </option>
-              <option value="yes">Yes — 4WD tracks</option>
-              <option value="no">No — sealed roads only</option>
-              <option value="optional">Optional — mix of both</option>
-            </select>
-          </FormField>
-
-          <FormField
-            label="Fishing interest"
-            icon={<Fish className="h-3.5 w-3.5" />}
-          >
-            <select name="fishing" required className={selectClass} defaultValue="">
-              <option value="" disabled>
-                Select
-              </option>
-              <option value="yes">Yes — keen angler</option>
-              <option value="maybe">Maybe — if the spot&apos;s good</option>
-              <option value="no">No thanks</option>
-            </select>
-          </FormField>
-        </div>
-
-        <FormField
-          label="Budget"
-          icon={<DollarSign className="h-3.5 w-3.5" />}
-        >
-          <select name="budget" required className={selectClass} defaultValue="">
-            <option value="" disabled>
-              Select budget range
-            </option>
-            {BUDGET_OPTIONS.map((b) => (
-              <option key={b} value={b}>
-                {b}
+            {AU_STATES.map((region) => (
+              <option key={region} value={region}>
+                {region}
               </option>
             ))}
           </select>
@@ -259,12 +131,12 @@ export function AdventureForm() {
         fullWidth
         className="mt-6 !py-4 !text-sm"
       >
-        Join Waitlist
+        Get Early Access
       </Button>
 
       <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-forest/50">
         <span aria-hidden>🔒</span>
-        We respect your privacy. No spam, ever.
+        Join the waitlist for early access.
       </p>
     </form>
   );

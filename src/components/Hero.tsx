@@ -6,7 +6,7 @@ import { HeroCta } from "@/components/HeroCta";
 const benefits = [
   "Handpicked destinations across Australia",
   "Tailored to your time, vehicle & interests",
-  "Complete Fri–Sun itineraries in minutes",
+  "Early-access members get first launch invites",
   "Plan less, adventure more",
 ];
 
