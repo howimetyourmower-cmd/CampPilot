@@ -38,7 +38,7 @@ export function Pricing() {
               </p>
             </div>
 
-            <div className="px-8 py-8">
+            <div className="px-8 pt-8 pb-10">
               <ul className="space-y-3">
                 {included.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm">
@@ -53,7 +53,7 @@ export function Pricing() {
 
               <a href="#adventure-form" className="mt-8 block">
                 <Button variant="ember" fullWidth className="!py-4">
-                  Start Free — Then $9/mo
+                  Start Free — Then $9/month
                 </Button>
               </a>
               <p className="mt-3 text-center text-xs text-forest/50">

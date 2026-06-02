@@ -6,8 +6,10 @@ import {
   Car,
   DollarSign,
   Fish,
+  Mail,
   MapPin,
   Tent,
+  User,
   Users,
 } from "lucide-react";
 import {
@@ -39,13 +41,25 @@ function FormField({ label, icon, children }: FormFieldProps) {
 }
 
 const selectClass =
-  "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-forest-dark outline-none transition focus:border-forest focus:ring-2 focus:ring-forest/20";
+  "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-forest-dark placeholder:text-forest/75 outline-none transition focus:border-forest focus:ring-2 focus:ring-forest/20";
 
 export function AdventureForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [waitlistSubmissions, setWaitlistSubmissions] = useState<
+    Array<{ firstName: string; email: string; submittedAt: string }>
+  >([]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const entry = {
+      firstName: firstName.trim(),
+      email: email.trim(),
+      submittedAt: new Date().toISOString(),
+    };
+    setWaitlistSubmissions((prev) => [...prev, entry]);
+    // TODO: Send waitlist submissions to an email/CRM provider (e.g. Resend, Mailchimp, ConvertKit).
     setSubmitted(true);
   }
 
@@ -62,8 +76,7 @@ export function AdventureForm() {
           You&apos;re on the list!
         </h3>
         <p className="mt-2 text-sm text-forest/70">
-          We&apos;ll send your first personalised adventure shortly. Check your
-          inbox.
+          You&apos;re on the list. We&apos;ll notify you when CampPilot launches.
         </p>
       </div>
     );
@@ -76,13 +89,44 @@ export function AdventureForm() {
       className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
     >
       <h2 className="font-display text-xl font-bold uppercase tracking-tight text-forest sm:text-2xl">
-        Plan Your Adventure
+        CampPilot is Coming Soon
       </h2>
       <p className="mt-2 text-sm text-forest/70">
-        Tell us about your trip and we&apos;ll craft a personalised itinerary.
+        Adventure generation is currently in development. Join the waitlist
+        below and we&apos;ll notify you when early access launches.
       </p>
 
       <div className="mt-6 space-y-4">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FormField label="First Name" icon={<User className="h-3.5 w-3.5" />}>
+            <input
+              name="firstName"
+              type="text"
+              autoComplete="given-name"
+              required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className={selectClass}
+              placeholder="First name"
+            />
+          </FormField>
+          <FormField
+            label="Email Address"
+            icon={<Mail className="h-3.5 w-3.5" />}
+          >
+            <input
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={selectClass}
+              placeholder="you@example.com"
+            />
+          </FormField>
+        </div>
+
         <FormField
           label="Trip type"
           icon={<Calendar className="h-3.5 w-3.5" />}
@@ -215,12 +259,13 @@ export function AdventureForm() {
         fullWidth
         className="mt-6 !py-4 !text-sm"
       >
-        Get My Adventure Plan
+        Join Waitlist
       </Button>
 
       <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-forest/50">
         <span aria-hidden>🔒</span>
-        We respect your privacy. Unsubscribe anytime.
+        We respect your privacy. {waitlistSubmissions.length} waitlist signup
+        {waitlistSubmissions.length === 1 ? "" : "s"} captured in this session.
       </p>
     </form>
   );

@@ -14,7 +14,7 @@ const steps = [
     number: 2,
     title: "We Plan Your Adventure",
     description:
-      "Our AI finds the best destinations, campsites, tracks and activities — then builds a detailed Fri–Sun itinerary just for you.",
+      "Our itinerary planner finds the best destinations, campsites, tracks and activities — then builds a detailed Fri–Sun adventure tailored to you.",
   },
   {
     number: 3,
@@ -106,10 +106,10 @@ function SampleCard() {
 
         <div className="relative mt-4 aspect-video overflow-hidden rounded-lg">
           <Image
-            src="https://images.unsplash.com/photo-1533478718955-08606f66f466?q=80&w=800&auto=format&fit=crop"
-            alt="4WD vehicle in a scenic Victorian valley"
+            src="/images/hero-camp.jpg"
+            alt="Camp setup beside a lake with a 4WD and campfire"
             fill
-            className="object-cover"
+            className="object-cover object-[60%_58%]"
             sizes="(max-width: 768px) 100vw, 400px"
           />
         </div>
