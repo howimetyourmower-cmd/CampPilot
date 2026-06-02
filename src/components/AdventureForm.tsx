@@ -264,8 +264,7 @@ export function AdventureForm() {
 
       <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-forest/50">
         <span aria-hidden>🔒</span>
-        We respect your privacy. {waitlistSubmissions.length} waitlist signup
-        {waitlistSubmissions.length === 1 ? "" : "s"} captured in this session.
+        We respect your privacy. No spam, ever.
       </p>
     </form>
   );
