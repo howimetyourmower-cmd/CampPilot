@@ -2,20 +2,20 @@ import Image from "next/image";
 
 const founderPhotos = [
   {
-    src: "/images/founder/photo-1.jpg",
-    alt: "Founder camping adventure photo 1",
+    src: "/images/founder/photo-1.png",
+    alt: "Founder campfire at a weekend campsite",
   },
   {
-    src: "/images/founder/photo-2.jpg",
-    alt: "Founder camping adventure photo 2",
+    src: "/images/founder/photo-2.png",
+    alt: "Founder 4WD on the beach at sunset",
   },
   {
     src: "/images/founder/photo-3.png",
-    alt: "Founder camping adventure photo 3",
+    alt: "Founder swag and 4WD camp setup on the beach",
   },
   {
     src: "/images/founder/photo-4.png",
-    alt: "Founder camping adventure photo 4",
+    alt: "Founder fishing at sunset",
   },
 ] as const;
 
