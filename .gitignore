@@ -41,3 +41,5 @@ yarn-error.log*
 
 # leftover scaffold
 /camppilot-app
+
+.vercel

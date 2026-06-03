@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { SampleAdventureGallery } from "@/components/SampleAdventureGallery";
 
 const steps = [
   {
@@ -104,8 +103,6 @@ function SampleCard() {
           3 hrs 20 mins from Melbourne • 2 Nights • Riverfront Camping • 4WD
           Friendly
         </p>
-
-        <SampleAdventureGallery />
 
         <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
           <div className="text-sm">

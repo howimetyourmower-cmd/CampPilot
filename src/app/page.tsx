@@ -16,9 +16,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <FounderStory />
         <Audience />
         <Features />
+        <FounderStory />
         <HowItWorks />
         <Pricing />
         <Testimonials />
