@@ -60,7 +60,7 @@ export function AdventureForm() {
     return (
       <div
         id="adventure-form"
-        className="rounded-2xl bg-white p-8 text-center shadow-2xl"
+        className="scroll-mt-28 rounded-2xl bg-white p-8 text-center shadow-2xl"
       >
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-forest/10">
           <Tent className="h-8 w-8 text-forest" />
@@ -79,7 +79,7 @@ export function AdventureForm() {
     <form
       id="adventure-form"
       onSubmit={handleSubmit}
-      className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
+      className="scroll-mt-28 rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
     >
       <h2 className="font-display text-xl font-bold uppercase tracking-tight text-forest sm:text-2xl">
         Get Early Access

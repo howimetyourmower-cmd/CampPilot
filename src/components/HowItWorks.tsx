@@ -57,15 +57,16 @@ export function HowItWorks() {
             </ol>
 
             <Button
-              variant="outline"
-              className="mt-10"
+              variant="ember"
+              className="mt-10 w-full sm:w-auto"
               onClick={() =>
-                document
-                  .getElementById("sample-adventure")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                document.getElementById("adventure-form")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
               }
             >
-              View a Sample Adventure
+              Join The Waitlist
             </Button>
           </div>
 
