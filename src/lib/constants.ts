@@ -28,13 +28,12 @@ export const TRAVELLERS_OPTIONS = [
   "Family with kids",
 ] as const;
 
-export const CAMPING_STYLES = [
-  "Tent",
+export const CAMPING_TYPES = [
   "Swag",
-  "Camper Trailer",
+  "Tent",
+  "Camper",
   "Caravan",
-  "Rooftop Tent",
-  "No camping — day trip",
+  "Other",
 ] as const;
 
 export const BUDGET_OPTIONS = [

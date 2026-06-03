@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Mail, MapPin, Tent, User } from "lucide-react";
-import { AU_STATES } from "@/lib/constants";
+import { AU_STATES, CAMPING_TYPES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 interface FormFieldProps {
@@ -31,8 +31,15 @@ export function AdventureForm() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [state, setState] = useState("");
+  const [campingType, setCampingType] = useState("");
   const [waitlistSubmissions, setWaitlistSubmissions] = useState<
-    Array<{ firstName: string; email: string; state: string; submittedAt: string }>
+    Array<{
+      firstName: string;
+      email: string;
+      state: string;
+      campingType: string;
+      submittedAt: string;
+    }>
   >([]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -41,6 +48,7 @@ export function AdventureForm() {
       firstName: firstName.trim(),
       email: email.trim(),
       state: state.trim(),
+      campingType: campingType.trim(),
       submittedAt: new Date().toISOString(),
     };
     setWaitlistSubmissions((prev) => [...prev, entry]);
@@ -119,6 +127,24 @@ export function AdventureForm() {
             {AU_STATES.map((region) => (
               <option key={region} value={region}>
                 {region}
+              </option>
+            ))}
+          </select>
+        </FormField>
+        <FormField label="Camping type" icon={<Tent className="h-3.5 w-3.5" />}>
+          <select
+            name="campingType"
+            required
+            className={selectClass}
+            value={campingType}
+            onChange={(e) => setCampingType(e.target.value)}
+          >
+            <option value="" disabled>
+              How do you camp?
+            </option>
+            {CAMPING_TYPES.map((type) => (
+              <option key={type} value={type}>
+                {type}
               </option>
             ))}
           </select>
